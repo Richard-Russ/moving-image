@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--used to get CSS elements-->
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+      </head>
+      <body>
+        <!--refers to the box the image can move about-->
+        <div id="container">
+            <h1>Header text </h1>
+            <!--grabs the image-->
+            <img id="memeimage" src="C:\Users\krato\memeImage.webp">
+            <p>paragraph text</p>
+        </div>
+        <!--creates the buttons to control the movement-->
+        <button id="startButton" onclick="startMoving()">Start Moving</button>
+        <button id="stopButton" onclick="stopMoving()">Stop Moving</button>
+      
+        <script>
+            //checks the rate the image moves
+          let interval;
+      //code to make the image move to a random location within the container perimiter 
+          function moveImage() {
+            const containerWidth = document.getElementById('container').offsetWidth;
+            const containerHeight = document.getElementById('container').offsetHeight;
+            const imageWidth = document.getElementById('memeimage').offsetWidth;
+            const imageHeight = document.getElementById('memeimage').offsetHeight;
+      
+            const x = Math.floor(Math.random() * (containerWidth - imageWidth));
+            const y = Math.floor(Math.random() * (containerHeight - imageHeight));
+      
+            document.getElementById('memeimage').style.left = x + 'px';
+            document.getElementById('memeimage').style.top = y + 'px';
+          }
+      //code to make the startMoving button work
+          function startMoving() {
+            interval = setInterval(moveImage, 1000);
+          }
+      //code to make the stopMoving button work
+          function stopMoving() {
+            clearInterval(interval);
+          }
+        </script>
+      </body>
+</html>
+

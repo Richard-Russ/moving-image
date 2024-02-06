@@ -1,0 +1,35 @@
+body{
+    background-color: brown;
+    color: aliceblue;
+}
+nav{
+    height: 6000px;
+    width: 200px;
+    float: left;
+    padding: 5px;
+    line-height: 30px;
+}
+footer{
+    text-align: center;
+    margin-right: 200px;
+}
+#memeImage{
+    height: 600px;
+    width: 600px;
+    margin-right: 200px;
+}
+header{
+    text-align: center;
+}
+#container {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    border: 1px solid black; 
+  }
+  #memeimage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
